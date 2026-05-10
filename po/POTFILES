@@ -1,0 +1,5 @@
+src/camview.c
+src/camview_duration.c
+src/camview_cameras.c
+src/camview_gst.c
+src/lib.c

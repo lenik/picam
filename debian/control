@@ -1,0 +1,28 @@
+Source: picam
+Section: utils
+Priority: optional
+Maintainer: Lenik <picam@bodz.net>
+Build-Depends: debhelper-compat (= 13), meson, ninja-build, pkgconf, check, libbas-c-dev,
+ libglib2.0-dev, libgtk-4-dev, libgstreamer1.0-dev, libgstreamer-plugins-base1.0-dev,
+ libgstreamer-plugins-bad1.0-dev
+Standards-Version: 4.6.0
+Homepage: https://github.com/lenik/picam
+Rules-Requires-Root: no
+
+Package: picam
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ gstreamer1.0-libcamera,
+ gstreamer1.0-plugins-base,
+ gstreamer1.0-plugins-good,
+ gstreamer1.0-plugins-bad,
+ gstreamer1.0-gtk4,
+ libgtk-4-1
+Recommends: rpicam-hello | libcamera-hello
+Description: Raspberry Pi camera utilities (camview)
+ picam provides camview, a Cheese-like preview and capture tool for Raspberry Pi 5
+ CSI/MIPI cameras using GStreamer and libcamera. It supports graphical preview,
+ headless still capture, and timed H.264 recording. The package also builds the
+ small shared libpicam library used by the project.

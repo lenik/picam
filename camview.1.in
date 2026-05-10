@@ -1,0 +1,197 @@
+.TH camview 1 "@PROJECT_YEAR@" "@PROJECT_VERSION@" "User Commands"
+.SH NAME
+camview \- Raspberry Pi CSI camera preview and capture
+.SH SYNOPSIS
+.B camview
+.RI [ OPTION ]...
+.SH DESCRIPTION
+.B camview
+uses GStreamer's
+.B libcamerasrc
+to access Raspberry Pi 5 (and compatible) MIPI/CSI cameras, similar in spirit to
+.BR cheese (1)
+for preview and recording.
+.PP
+With no capture options it opens a graphical live preview. With
+.B \-\-still
+or
+.B \-\-duration
+it runs headless, captures, and exits.
+.PP
+Preview window keys:
+.B P
+saves a JPEG into your Pictures directory (or the current directory if XDG is unset);
+.B Q
+quits the application.
+.PP
+In preview mode,
+.B libcamerasrc
+is typically configured for continuous autofocus
+.RB ( af\-mode = continuous,
+.B af\-speed
+fast) unless
+.B \-\-no\-autofocus
+is given. For still capture, the pipeline waits
+.B \-\-af\-settle\-ms
+after reaching
+.B PLAYING
+before pulling one encoded frame.
+.SH OPTIONS
+.TP
+.BR \-s ", " \-\-still
+Capture one still image and exit (headless). Default format is JPEG.
+.TP
+.BI "\-d " TIME "\fR, " \-\-duration " " TIME
+Record H.264 video for the given duration and exit (headless).
+.I TIME
+accepts a number with optional unit:
+.BR ns ", " us ", " ms ", " s ", " min ", " hr
+and full words such as
+.BR second ", " minute ", " hour
+(e.g.
+.BR 10s ", " 500ms ", " 2min ", " 1.5hr ).
+A bare number is interpreted as seconds.
+.TP
+.BI "\-f " FORMAT "\fR, " \-\-format " " FORMAT
+Still:
+.BR jpg ", " jpeg ", or " png .
+Video:
+.BR mp4 ", " mov ", or " mkv .
+Defaults by mode if omitted.
+.TP
+.BI "\-o " PATH "\fR, " \-\-output " " PATH
+Output file. Default:
+.B camview_YYYYMMDD_HHMMSS.ext
+in the current working directory.
+.TP
+.BI "\-i " ID "\fR, " \-\-device " " ID
+Select CSI camera by 1-based index (2 is the second camera). When cameras can be listed, requires
+.B rpicam\-hello
+or
+.B libcamera\-hello
+for
+.B \-\-list\-cameras
+unless
+.B \-\-camera\-name
+is set. If listing is unavailable and only one camera exists, omitting
+.B \-i
+may still work.
+.TP
+.BI "\-\-camera\-name " ID
+Use the libcamera camera id string directly (overrides
+.BR \-i ).
+.TP
+.BI "\-r " WxH "\fR, " \-\-resolution " " WxH
+Scale output with
+.BR videoscale ,
+e.g.
+.BR 1920x1080 .
+Omit for the sensor default size.
+.TP
+.B \-\-framerate \fIN
+Video frame rate (default: 30). Applied via a caps filter on raw video before the encoder.
+.TP
+.B \-\-jpeg\-quality \fIN
+JPEG quality 1\(en100 (default: 92). Affects still capture and preview snapshots.
+.TP
+.B \-\-af\-settle\-ms \fIMS
+Milliseconds to wait after the still pipeline reaches
+.B PLAYING
+before grabbing a frame, so continuous autofocus can settle (default: 1500). Ignored for
+.B \-\-no\-autofocus
+except for a short fixed delay.
+.TP
+.B \-\-no\-autofocus
+Disable libcamera autofocus controls
+.RB ( af\-mode
+manual).
+.TP
+.B \-\-headless
+Never open a window. Capture modes are headless by default; this flag is for forcing headless behaviour if extended later.
+.TP
+.BR \-v ", " \-\-verbose
+More logging (repeat for more detail, via bas logging).
+.TP
+.BR \-q ", " \-\-quiet
+Less logging.
+.TP
+.BR \-h ", " \-\-help
+Print usage and exit successfully.
+.TP
+.B \-\-version
+Print version and license information and exit successfully.
+.SH EXAMPLES
+Live preview on the default camera:
+.PP
+.RS
+.nf
+camview
+.fi
+.RE
+.PP
+Use the second CSI camera and record 20 seconds to MP4:
+.PP
+.RS
+.nf
+camview \-i 2 \-d 20s \-o out.mp4
+.fi
+.RE
+.PP
+High\-resolution PNG still:
+.PP
+.RS
+.nf
+camview \-s \-f png \-r 3840x2160 \-o frame.png
+.fi
+.RE
+.SH ENVIRONMENT
+.TP
+.B GST_DEBUG
+Standard GStreamer debug syntax (e.g.
+.BR libcamera:4 ", " *:3 ).
+.SH FILES
+.I camview_*.jpg
+and
+.I camview_*.png
+default still names in the current directory;
+.I camview_*.mp4
+(or
+.BR .mov ", " .mkv )
+for video when
+.B \-o
+is omitted.
+.SH DEPENDENCIES
+Runtime plugins include
+.B libcamerasrc
+(GStreamer libcamera),
+.BR gtk4paintablesink ,
+image encoders
+.RB ( jpegenc ", " pngenc ),
+H.264 encoders
+.RB ( v4l2h264enc ", " x264enc ", " openh264enc
+in preference order), and muxers
+.BR mp4mux ", " qtmux ", " matroskamux
+as selected by
+.BR \-\-format .
+.SH EXIT STATUS
+.TP
+.B 0
+Success.
+.TP
+.B 1
+Invalid options, resolution of the camera path failed, or capture/pipeline failure.
+.SH SEE ALSO
+.BR rpicam\-hello (1),
+.BR gst\-launch\-1.0 (1),
+.BR cheese (1).
+.SH AUTHOR
+Written by @PROJECT_AUTHOR@ <@PROJECT_EMAIL@>.
+.SH COPYRIGHT
+Copyright \(co @PROJECT_YEAR@.
+License AGPL-3.0-or-later. This is free software: you are free to change and
+redistribute it under the terms of the GNU Affero General Public License.
+There is NO WARRANTY, to the extent permitted by law.
+See the LICENSE file in the source distribution for the full license text,
+including supplemental terms stating this project opposes AI exploitation and
+AI hegemony, and rejects mindless MIT-style licensing and politically naive
+BSD-style licensing.

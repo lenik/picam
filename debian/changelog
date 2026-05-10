@@ -1,0 +1,23 @@
+picam (1.1.0) unstable; urgency=medium
+
+  * camview: Raspberry Pi CSI/MIPI support via GStreamer libcamerasrc — GTK 4 live
+    preview (gtk4paintablesink); headless still capture (JPEG/PNG); timed H.264
+    recording (MP4/MOV/MKV) with hardware encoder preference (v4l2h264enc).
+  * camview: 1-based camera index (-i/--device) for dual CSI; optional
+    --camera-name; duration parsing (s, ms, min, hr, etc.); resolution, framerate,
+    JPEG quality, AF settle and --no-autofocus.
+  * debian/control: runtime Depends on gstreamer1.0-libcamera, base/good/bad
+    plugins, gstreamer1.0-gtk4, libgtk-4-1; Recommends rpicam-hello |
+    libcamera-hello for camera listing; Build-Depends for GLib/GTK/GStreamer dev
+    packages.
+  * Documentation: README / README-zh; camview(1); bash-completion; GitHub
+    homepage in package metadata.
+  * tests: duration_test (parse durations), lib_test (stream/file helpers).
+
+ -- Lenik <picam@bodz.net>  Sun, 10 May 2026 12:00:00 +0000
+
+picam (1.0.0) testing; urgency=medium
+
+  * Initial release.
+
+ -- Lenik (谢继雷) <lenik@bodz.net>  Wed, 04 Mar 2026 00:00:00 +0000
