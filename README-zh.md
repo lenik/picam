@@ -80,10 +80,20 @@ meson test -C build
 
 ## i18n（gettext）
 
-翻译在 `po/`，`POTFILES` 列出提取字符串的源文件。
+可翻译字符串在 `po/`，由 `POTFILES` 指定源文件；gettext 域名为 **`picam`**。
+
+从源码更新模板并把新增/变更的 `msgid` 合并进各语言 `*.po`：
 
 ```bash
-ninja -C build posync   # 若项目中存在该目标
+ninja -C build picam-pot picam-update-po
+ninja -C build picam-gmo
+```
+
+随后在每种语言中填写 `msgstr`（或用 PO 编辑器）。可用 `msgfmt -c po/<语言>.po` 做校验。
+
+**说明：** 某些环境下的命令行工具 `poedit`（`poedit --help`）是 **TSV 批量写入工具**，不是 [Poedit](https://poedit.net/) 图形客户端，也不能代替 `msgmerge`；更新模板请用上面的 `ninja` 目标。
+
+```bash
 LANGUAGE=zh_CN ./build/camview -h
 ```
 

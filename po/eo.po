@@ -1,70 +1,83 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: camview\n"
+"Project-Id-Version: picam\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-24 22:31+0800\n"
+"POT-Creation-Date: 2026-05-10 14:34+0800\n"
 "Language: eo\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/camview.c:32
+#: src/camview.c:42
 msgid ""
-"Usage: camview [OPTION]... [FILE]...\n"
-"Concatenate FILE(s) to standard output. With no FILE, or when FILE is -,\n"
-"read standard input.\n"
+"Usage: camview [OPTION]...\n"
+"Raspberry Pi 5 CSI/MIPI camera preview and capture (GStreamer + libcamera).\n"
 msgstr ""
-"Uzo: camview [OPTION]... [FILE]...\n"
-"Kunigas FILE(j)n al norma eligo. Sen FILE, au kiam FILE estas -,\n"
-"legi de norma enigo.\n"
 
-#: src/camview.c:38
+#: src/camview.c:46
+msgid "Preview (graphical):\n"
+msgstr ""
+
+#: src/camview.c:49
+msgid "Capture (headless):\n"
+msgstr ""
+
+#: src/camview.c:56
+msgid "Camera:\n"
+msgstr ""
+
+#: src/camview.c:61
+msgid "Image / video tuning:\n"
+msgstr ""
+
+#: src/camview.c:70
 msgid "repeat for more verbose loggings\n"
 msgstr "ripetu por pli detalaj protokoloj\n"
 
-#: src/camview.c:40
+#: src/camview.c:72
 msgid "show less logging messages\n"
 msgstr "montri malpli da protokolaj mesagxoj\n"
 
-#: src/camview.c:42
+#: src/camview.c:74
 msgid "display this help and exit\n"
 msgstr "montri cxi tiun helpon kaj eliri\n"
 
-#: src/camview.c:44
+#: src/camview.c:76
 msgid "output version information and exit\n"
 msgstr "montri versiajn informojn kaj eliri\n"
 
-#: src/camview.c:46
+#: src/camview.c:78
 #, c-format
 msgid "Report bugs to: <%s>\n"
 msgstr "Raportu cimojn al: <%s>\n"
 
-#: src/camview.c:54
-#, c-format
-msgid "hello, world!\n"
-msgstr "Saluton, mondo!\n"
-
-#: src/camview.c:81
+#: src/camview.c:201
 #, c-format
 msgid "Copyright (C) %d %s\n"
 msgstr "Kopirajto (C) %d %s\n"
 
-#: src/camview.c:82
-msgid "License AGPL-3.0-or-later: <https://www.gnu.org/licenses/agpl-3.0.html>\n"
-msgstr "Permesilo AGPL-3.0-or-later: <https://www.gnu.org/licenses/agpl-3.0.html>\n"
+#: src/camview.c:202
+msgid ""
+"License AGPL-3.0-or-later: <https://www.gnu.org/licenses/agpl-3.0.html>\n"
+msgstr ""
+"Permesilo AGPL-3.0-or-later: <https://www.gnu.org/licenses/agpl-3.0.html>\n"
 
-#: src/camview.c:84
+#: src/camview.c:204
 msgid "This is free software: you are free to change and redistribute it.\n"
 msgstr "Tio estas libera programaro: vi rajtas sxangxi kaj redistribui gxin.\n"
 
-#: src/camview.c:86
+#: src/camview.c:206
 msgid "This project opposes AI exploitation and AI hegemony.\n"
 msgstr "Tiu projekto kontrauxas AI-ekspluaton kaj AI-hegemonion.\n"
 
-#: src/camview.c:87
-msgid "This project rejects mindless MIT-style licensing and politically naive BSD-style licensing.\n"
-msgstr "Tiu projekto malakceptas senpripensan MIT-stilan permesilon kaj politike naivan BSD-stilan permesilon.\n"
+#: src/camview.c:207
+msgid ""
+"This project rejects mindless MIT-style licensing and politically naive BSD-"
+"style licensing.\n"
+msgstr ""
+"Tiu projekto malakceptas senpripensan MIT-stilan permesilon kaj politike "
+"naivan BSD-stilan permesilon.\n"
 
-#: src/camview.c:90
+#: src/camview.c:210
 msgid "There is NO WARRANTY, to the extent permitted by law.\n"
 msgstr "NE ESTAS GARANTIO, lau la amplekso permesita de la lexo.\n"
 
@@ -72,3 +85,16 @@ msgstr "NE ESTAS GARANTIO, lau la amplekso permesita de la lexo.\n"
 #, c-format
 msgid "%s: write error\n"
 msgstr "%s: skriberaro\n"
+
+#~ msgid ""
+#~ "Usage: camview [OPTION]... [FILE]...\n"
+#~ "Concatenate FILE(s) to standard output. With no FILE, or when FILE is -,\n"
+#~ "read standard input.\n"
+#~ msgstr ""
+#~ "Uzo: camview [OPTION]... [FILE]...\n"
+#~ "Kunigas FILE(j)n al norma eligo. Sen FILE, au kiam FILE estas -,\n"
+#~ "legi de norma enigo.\n"
+
+#, c-format
+#~ msgid "hello, world!\n"
+#~ msgstr "Saluton, mondo!\n"

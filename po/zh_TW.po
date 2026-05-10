@@ -1,70 +1,82 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: camview\n"
+"Project-Id-Version: picam\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-24 22:31+0800\n"
+"POT-Creation-Date: 2026-05-10 14:34+0800\n"
 "Language: zh_TW\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/camview.c:32
+#: src/camview.c:42
 msgid ""
-"Usage: camview [OPTION]... [FILE]...\n"
-"Concatenate FILE(s) to standard output. With no FILE, or when FILE is -,\n"
-"read standard input.\n"
+"Usage: camview [OPTION]...\n"
+"Raspberry Pi 5 CSI/MIPI camera preview and capture (GStreamer + libcamera).\n"
 msgstr ""
-"用法：camview [選項]... [檔案]...\n"
-"將檔案內容串接後輸出到標準輸出。若未提供檔案，或檔案為 -，\n"
-"則從標準輸入讀取。\n"
+"用法：camview [選項]...\n"
+"樹莓派 5 CSI/MIPI 攝影機預覽與擷取（GStreamer + libcamera）。\n"
 
-#: src/camview.c:38
+#: src/camview.c:46
+msgid "Preview (graphical):\n"
+msgstr "預覽（圖形介面）：\n"
+
+#: src/camview.c:49
+msgid "Capture (headless):\n"
+msgstr "擷取（無介面/無頭）：\n"
+
+#: src/camview.c:56
+msgid "Camera:\n"
+msgstr "攝影機：\n"
+
+#: src/camview.c:61
+msgid "Image / video tuning:\n"
+msgstr "影像 / 影片調校：\n"
+
+#: src/camview.c:70
 msgid "repeat for more verbose loggings\n"
 msgstr "重複使用以顯示更多詳細日誌\n"
 
-#: src/camview.c:40
+#: src/camview.c:72
 msgid "show less logging messages\n"
 msgstr "顯示較少的日誌訊息\n"
 
-#: src/camview.c:42
+#: src/camview.c:74
 msgid "display this help and exit\n"
 msgstr "顯示此說明並結束\n"
 
-#: src/camview.c:44
+#: src/camview.c:76
 msgid "output version information and exit\n"
 msgstr "輸出版本資訊並結束\n"
 
-#: src/camview.c:46
+#: src/camview.c:78
 #, c-format
 msgid "Report bugs to: <%s>\n"
 msgstr "回報問題到：<%s>\n"
 
-#: src/camview.c:54
-#, c-format
-msgid "hello, world!\n"
-msgstr "你好，世界！\n"
-
-#: src/camview.c:81
+#: src/camview.c:201
 #, c-format
 msgid "Copyright (C) %d %s\n"
 msgstr "版權所有 (C) %d %s\n"
 
-#: src/camview.c:82
-msgid "License AGPL-3.0-or-later: <https://www.gnu.org/licenses/agpl-3.0.html>\n"
+#: src/camview.c:202
+msgid ""
+"License AGPL-3.0-or-later: <https://www.gnu.org/licenses/agpl-3.0.html>\n"
 msgstr "授權 AGPL-3.0-or-later：<https://www.gnu.org/licenses/agpl-3.0.html>\n"
 
-#: src/camview.c:84
+#: src/camview.c:204
 msgid "This is free software: you are free to change and redistribute it.\n"
 msgstr "這是自由軟體：你可以自由修改並再散布。\n"
 
-#: src/camview.c:86
+#: src/camview.c:206
 msgid "This project opposes AI exploitation and AI hegemony.\n"
 msgstr "本專案反對 AI 剝削與 AI 霸權。\n"
 
-#: src/camview.c:87
-msgid "This project rejects mindless MIT-style licensing and politically naive BSD-style licensing.\n"
+#: src/camview.c:207
+msgid ""
+"This project rejects mindless MIT-style licensing and politically naive BSD-"
+"style licensing.\n"
 msgstr "本專案反對無腦 MIT 式授權與政治愚蠢 BSD 式授權。\n"
 
-#: src/camview.c:90
+#: src/camview.c:210
 msgid "There is NO WARRANTY, to the extent permitted by law.\n"
 msgstr "在法律允許範圍內，不提供任何保證。\n"
 
@@ -72,3 +84,16 @@ msgstr "在法律允許範圍內，不提供任何保證。\n"
 #, c-format
 msgid "%s: write error\n"
 msgstr "%s: 寫入錯誤\n"
+
+#~ msgid ""
+#~ "Usage: camview [OPTION]... [FILE]...\n"
+#~ "Concatenate FILE(s) to standard output. With no FILE, or when FILE is -,\n"
+#~ "read standard input.\n"
+#~ msgstr ""
+#~ "用法：camview [選項]... [檔案]...\n"
+#~ "將檔案內容串接後輸出到標準輸出。若未提供檔案，或檔案為 -，\n"
+#~ "則從標準輸入讀取。\n"
+
+#, c-format
+#~ msgid "hello, world!\n"
+#~ msgstr "你好，世界！\n"

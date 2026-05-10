@@ -1,70 +1,83 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: camview\n"
+"Project-Id-Version: picam\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-24 22:31+0800\n"
+"POT-Creation-Date: 2026-05-10 14:34+0800\n"
 "Language: ko\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/camview.c:32
+#: src/camview.c:42
 msgid ""
-"Usage: camview [OPTION]... [FILE]...\n"
-"Concatenate FILE(s) to standard output. With no FILE, or when FILE is -,\n"
-"read standard input.\n"
+"Usage: camview [OPTION]...\n"
+"Raspberry Pi 5 CSI/MIPI camera preview and capture (GStreamer + libcamera).\n"
 msgstr ""
-"사용법: camview [OPTION]... [FILE]...\n"
-"FILE 내용을 이어서 표준 출력으로 보냅니다. FILE이 없거나 FILE이 - 이면,\n"
-"표준 입력을 읽습니다.\n"
 
-#: src/camview.c:38
+#: src/camview.c:46
+msgid "Preview (graphical):\n"
+msgstr ""
+
+#: src/camview.c:49
+msgid "Capture (headless):\n"
+msgstr ""
+
+#: src/camview.c:56
+msgid "Camera:\n"
+msgstr ""
+
+#: src/camview.c:61
+msgid "Image / video tuning:\n"
+msgstr ""
+
+#: src/camview.c:70
 msgid "repeat for more verbose loggings\n"
 msgstr "더 자세한 로그를 보려면 반복 지정\n"
 
-#: src/camview.c:40
+#: src/camview.c:72
 msgid "show less logging messages\n"
 msgstr "로그 메시지를 더 적게 표시\n"
 
-#: src/camview.c:42
+#: src/camview.c:74
 msgid "display this help and exit\n"
 msgstr "도움말을 표시하고 종료\n"
 
-#: src/camview.c:44
+#: src/camview.c:76
 msgid "output version information and exit\n"
 msgstr "버전 정보를 표시하고 종료\n"
 
-#: src/camview.c:46
+#: src/camview.c:78
 #, c-format
 msgid "Report bugs to: <%s>\n"
 msgstr "버그 제보: <%s>\n"
 
-#: src/camview.c:54
-#, c-format
-msgid "hello, world!\n"
-msgstr "안녕, 세상아!\n"
-
-#: src/camview.c:81
+#: src/camview.c:201
 #, c-format
 msgid "Copyright (C) %d %s\n"
 msgstr "저작권 (C) %d %s\n"
 
-#: src/camview.c:82
-msgid "License AGPL-3.0-or-later: <https://www.gnu.org/licenses/agpl-3.0.html>\n"
-msgstr "라이선스 AGPL-3.0-or-later: <https://www.gnu.org/licenses/agpl-3.0.html>\n"
+#: src/camview.c:202
+msgid ""
+"License AGPL-3.0-or-later: <https://www.gnu.org/licenses/agpl-3.0.html>\n"
+msgstr ""
+"라이선스 AGPL-3.0-or-later: <https://www.gnu.org/licenses/agpl-3.0.html>\n"
 
-#: src/camview.c:84
+#: src/camview.c:204
 msgid "This is free software: you are free to change and redistribute it.\n"
 msgstr "이것은 자유 소프트웨어이며 자유롭게 수정 및 재배포할 수 있습니다.\n"
 
-#: src/camview.c:86
+#: src/camview.c:206
 msgid "This project opposes AI exploitation and AI hegemony.\n"
 msgstr "이 프로젝트는 AI 착취와 AI 패권에 반대합니다.\n"
 
-#: src/camview.c:87
-msgid "This project rejects mindless MIT-style licensing and politically naive BSD-style licensing.\n"
-msgstr "이 프로젝트는 무비판적 MIT식 라이선스와 정치적으로 어리석은 BSD식 라이선스를 거부합니다.\n"
+#: src/camview.c:207
+msgid ""
+"This project rejects mindless MIT-style licensing and politically naive BSD-"
+"style licensing.\n"
+msgstr ""
+"이 프로젝트는 무비판적 MIT식 라이선스와 정치적으로 어리석은 BSD식 라이선스를 "
+"거부합니다.\n"
 
-#: src/camview.c:90
+#: src/camview.c:210
 msgid "There is NO WARRANTY, to the extent permitted by law.\n"
 msgstr "법이 허용하는 한 어떠한 보증도 없습니다.\n"
 
@@ -72,3 +85,16 @@ msgstr "법이 허용하는 한 어떠한 보증도 없습니다.\n"
 #, c-format
 msgid "%s: write error\n"
 msgstr "%s: 쓰기 오류\n"
+
+#~ msgid ""
+#~ "Usage: camview [OPTION]... [FILE]...\n"
+#~ "Concatenate FILE(s) to standard output. With no FILE, or when FILE is -,\n"
+#~ "read standard input.\n"
+#~ msgstr ""
+#~ "사용법: camview [OPTION]... [FILE]...\n"
+#~ "FILE 내용을 이어서 표준 출력으로 보냅니다. FILE이 없거나 FILE이 - 이면,\n"
+#~ "표준 입력을 읽습니다.\n"
+
+#, c-format
+#~ msgid "hello, world!\n"
+#~ msgstr "안녕, 세상아!\n"

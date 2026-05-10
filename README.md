@@ -80,10 +80,20 @@ meson test -C build
 
 ## i18n (gettext)
 
-`camview` strings under `po/` (`POTFILES` lists sources). Dev builds pick up `.mo` from `build/po` when present.
+`camview` strings live under `po/`; `POTFILES` lists sources for extraction. The Meson gettext domain is **`picam`**.
+
+Refresh the template and merge new/changed `msgid` entries into every `*.po`:
 
 ```bash
-ninja -C build posync   # if the posync target exists in your tree
+ninja -C build picam-pot picam-update-po
+ninja -C build picam-gmo
+```
+
+Then fill in `msgstr` in each language (or use a PO editor). Validate with `msgfmt -c po/<lang>.po`.
+
+**Note:** a CLI named `poedit` on some systems is a **batch TSV applier** (`poedit --help`), not the [Poedit](https://poedit.net/) GUI and not a substitute for `msgmerge`. For template updates, use the `ninja` targets above.
+
+```bash
 LANGUAGE=zh_CN ./build/camview -h
 ```
 
